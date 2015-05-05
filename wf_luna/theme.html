@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="Page-Enter" content="blendTrans(duration=0.5)" /> 
+<meta http-equiv="Page-Exit" content="blendTrans(duration=0.5)" /> 
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//--><script language=JavaScript>
+</script>
+</head>
+
+<body>
+<div align="center">
+<table <table id="table">
+<tr>
+<td>
+<div align="center">
+          <table>
+
+<tr>
+<td>
+
+<div align="center">
+          <table>
+              <tr>
+		    <td id="headerbarleft" width="70%">
+			<b><{$xoops_sitename}></b> : <{$xoops_pagetitle}>
+		     </td>
+	<{if $xoops_isuser}>
+                <td id="headerbar" width="12%">
+			<{if $nbrepm!=0}>
+				<a href="<{$xoops_url}>/viewpmsg.php">
+            <img src="<{$xoops_imageurl}>/bouton/pm_yes.gif" alt="You have <{$nbrepm}> message<{if $nbrepm > 1}>s<{else}><{/if}>">
+            <br />
+            <font color="red"><{$nbrepm}></font> message<{if $nbrepm>1}>s<{else}><{/if}></a>
+			<{else}>
+				<a href="<{$xoops_url}>/viewpmsg.php"><img src="<{$xoops_imageurl}>/bouton/pm_no.gif" alt="Message" /><br />Message</a>
+			<{/if}>
+            </td> <td id="headerbar" width="12%">
+				<a href="<{$xoops_url}>/userinfo.php?uid=<{$xoops_userid}>">
+				<img src="<{$xoops_imageurl}>bouton/membre.gif" alt="<{$xoops_uname}>"/>
+				<br /><{$xoops_uname}></a>
+            
+			<{if $xoops_isadmin}>
+            </td><td id="headerbar" width="12%">
+				<a href="<{$xoops_url}>/admin.php">
+				<img src="<{$xoops_imageurl}>bouton/admin.gif" alt="Admin" />
+				<br />Admin</a><br />
+			<{/if}>
+            </td> <td id="headerbar" width="12%">
+				<a href="<{$xoops_url}>/user.php?op=logout">
+				<img src="<{$xoops_imageurl}>bouton/logout.gif" alt="Log out" />
+				<br />Exit</a><br />
+	<{/if}>
+			</td>
+			</tr>
+		</table>
+</div>
+</td>
+</tr>
+
+            <tr>
+              <td id="headerbanner_left" height="195">
+			<a href="<{$xoops_url}>">
+			<img src="<{$xoops_imageurl}>images/logo.gif" align="left" alt="<{$xoops_sitename}> : <{$xoops_meta_description}>" />
+			</a></td>
+	<{if $xoops_isuser}>
+	<{else}>
+				<td width="6%" id="headerbar_login" ><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<a href="<{$xoops_url}>/user.php">
+				<img src="<{$xoops_imageurl}>bouton/login.gif" alt="Login" />
+				<br />Log in!</a>
+	<{/if}>
+
+            </tr>
+          </table>
+</div>
+</td>
+</tr>
+
+
+
+<tr>
+<td><br /><br />
+<div align="center">
+  <table>
+    <tr>
+        <!-- Start left blocks loop -->
+      <td id="leftcolumn">
+
+        <{foreach item=block from=$xoops_lblocks}>
+<div align="center">
+          <{include file="WF_luna/theme_blockleft.html"}><br />
+</div>
+        <{/foreach}>
+	<img src="<{$xoops_imageurl}>images/blank.gif" alt="<{$xoops_meta_keywords}>" width="170" height="0" />
+
+      </td>
+        <!-- End left blocks loop -->
+
+        <!-- Display center blocks if any -->
+      <td id="centercolumn"><br /><br /><br /><br />
+<img src="<{$xoops_imageurl}>images/capsule.gif" alt="Houston, we have a problem." align="right"/><br /><br /><br /><br />
+<div align="center">
+        <{if $xoops_showcblock == 1}>
+        <table>
+          <tr>
+            <!-- Start center-center blocks loop -->
+            <td id="centerCcolumn" colspan="2" width="100%">
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="WF_luna/theme_blockcenter_c.html"}><br />
+            <{/foreach}>
+            </td>
+            <!-- End center-center blocks loop -->
+          </tr>
+
+          <tr>
+            <!-- Start center-left blocks loop -->
+            <td id="centerLcolumn">
+
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="WF_luna/theme_blockcenter_l.html"}><br />
+              <{/foreach}>
+            </td>
+            <!-- End center-left blocks loop -->
+
+            <!-- Start center-right blocks loop -->
+			<td id="centerRcolumn">
+
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="WF_luna/theme_blockcenter_r.html"}><br />
+              <{/foreach}>
+
+            </td>
+           <!-- End center-right blocks loop -->
+
+          </tr>
+        </table>
+
+        <{/if}>
+</div>
+        <!-- End display center blocks -->
+<div align="center">
+<table>
+<td colspan="2">
+<br />
+	<{if $xoops_contents != ""}>
+        <div id="content">
+          <{$xoops_contents}>
+	  </div>
+	<{/if}>
+</td>
+</table>
+</div>
+      <{if $xoops_showrblock == 1}>
+      <td id="rightcolumn">
+
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+<div align="center">
+          <{include file="WF_luna/theme_blockright.html"}><br />
+</div>
+        <{/foreach}>
+	<img src="<{$xoops_imageurl}>images/blank.gif" alt="<{$xoops_meta_description}>" width="170" height="0" />
+        <!-- End right blocks loop -->
+      </td>
+      <{/if}>
+
+    </tr>
+  </table>
+</div>
+</td>
+</tr>
+
+<tr><td>
+<div align="center">
+  <table>
+    <tr id="footerbar">
+	<td><img src="<{$xoops_imageurl}>images/earth.jpg" alt="<{$xoops_sitename}> : <{$xoops_meta_description}>" align="center" /></td>
+      <td id="footerbar" align="center">
+		<{$xoops_banner}><p>
+		<{$xoops_footer}><p><a href="http://www.wolfpackclan.com/" target="_blank"><img src="<{$xoops_imageurl}>images/wolfactory_tag.gif" alt="Theme Design: Solo / Wolf Pack Clan" align="center" /></a>
+    </td>
+ </tr>
+  </table>
+</div>
+ </table>
+ </div>
+</body>
+
+</html>
